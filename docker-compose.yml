@@ -7,7 +7,7 @@ services:
     container_name: ansible-rulebook
     restart: unless-stopped
     volumes:
-      - ./eda:/data/podman/eda
+      - ./eda:/eda
     networks:
       - rulebook
     command: >
