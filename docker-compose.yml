@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+  ansible-rulebook:
+    build:
+      dockerfile: Dockerfile
+    container_name: ansible-rulebook
+    restart: unless-stopped
+    volumes:
+      - ./eda:/data/podman/eda
+    networks:
+      - rulebook
+    command: >
+      ansible-rulebook
+      --rulebook /eda/elastic-rulebook.yml
+      --inventory /eda/inventory.yml
+      --verbose
+
+# volumes:
+#   mydata:
+#     driver: local
+
+networks:
+  rulebook:
+    driver: bridge
