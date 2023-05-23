@@ -12,7 +12,7 @@ services:
       - rulebook
     command: >
       ansible-rulebook
-      --rulebook /eda/elastic-rulebook.yml
+      --rulebook /eda/rulebook.yml
       --inventory /eda/inventory.yml
       --verbose
 
